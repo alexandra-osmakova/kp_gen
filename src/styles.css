@@ -1,1 +1,171 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif!important;
+  background-color: #fff;
+}
+
+header {
+  height: 3.4375rem;
+  width: 100%;
+  background-color: #6597D2;
+  box-shadow: 0rem 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+}
+
+.content_block {
+  padding: 3.8125rem 4.4375rem;
+  width: 100%;
+}
+
+h2 {
+  font-size: 1.5625rem;
+  color: #333333;
+}
+
+.common_text {
+  font-size: 1rem;
+  color: #333333;
+}
+
+button {
+  font-size: 1rem;
+  color: #333333;
+  outline: none;
+  border: unset;
+  padding: 0.75rem 2.8125rem;
+  border-radius: 0.3125rem;
+  box-shadow: 0rem 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+
+  -o-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+button:hover {
+  transform: scale(1.02)
+}
+
+.button_next {
+  background-color: #6597D2;
+  color: #FEFEFE;
+  margin-right: 1rem;
+}
+
+.button_prev {
+  background-color: #DCDCDC;
+}
+
+.text_inputs_wrap {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 1.625rem
+}
+
+input[type=text] {
+  outline: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  font-size: 1rem;
+  color: #333333;
+  border: unset;
+  border-bottom: 0.0625rem solid #333333;
+  min-width: 40%;
+}
+
+input[type=text]::placeholder {
+  color: #C5C5C5;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.radio-button,
+.checkbox_group {
+  position: relative;
+  margin: 1rem 0;
+  display: block;
+}
+
+.checkbox_group {
+  display: block;
+}
+
+.radio-button input,
+.checkbox_group input {
+  position: absolute;
+  margin: 0.5rem;
+  padding: 0;
+  visibility: hidden;
+}
+
+.radio-button .label-visible,
+.checkbox_group .label-visible {
+  margin-left: 2em;
+  margin-bottom: 0;
+}
+
+.fake-radiobutton,
+.fake-checkbox {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0.1875rem;
+  width: 1rem;
+  height: 1rem;
+  border: 0.0625rem solid slategray;
+  background-color: white;
+}
+
+.fake-radiobutton:after,
+.fake-checkbox:after {
+  content: "";
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.7rem;
+  height: 0.7rem;
+  background: #6597D2;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.fake-radiobutton {
+  border-radius: 50%;
+}
+
+.fake-radiobutton:after {
+  border-radius: 50%;
+}
+
+input[type="radio"]:checked+span .fake-radiobutton:after,
+input[type="checkbox"]:checked+span .fake-checkbox:after {
+  display: block;
+}
+
+.plus_button {
+    border-radius: 50%;
+    background-color: #6597D2;
+    width: 1.9375rem;
+    height: 1.9375rem;
+    padding: unset;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0rem 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+}
+
+.delete {
+    background-color: #D26565;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

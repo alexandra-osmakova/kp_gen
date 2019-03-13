@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+}
+
+.calk_table {
+    width: 100%;
+    padding: 1.625rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.calk_table__column {
+    width: 23%;
+    background-color: #E7E7E7;
+    border-radius: 0.4375rem;
+    padding: 1.625rem 0.125rem;
+
+    -o-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.calk_table__column .common_text {
+    color: #5C5C5C;
+    text-align: center;
+    display: block;
+}
+
+.calk_table__card {
+    padding: 0.625rem;
+    background-color: #FEFEFE;
+    border-radius: 0.3125rem;
+    margin-top: 0.5rem;
+    box-shadow: 0rem 0.125rem 0.125rem rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    max-width: 16rem;
+
+}
+
+.calk_table__card_text {
+    font-size: 0.875rem;
+    color: #333333;
+}
+
+.calk_table__card_price {
+    font-weight: bold;
+}
+
+.allOptions {
+    width: 100%;
+    background-color: #F2F2F2;
+    border-radius: 0.4375rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+
+}
+
+.example-list {
+    min-height: 60px;
+    display: block;
+  }
+  
+  .allOptions .example-list {
+    min-height: 60px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.allOptions .calk_table__card {
+    margin-right: 1rem
+}
+  
+  .cdk-drag-preview {
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+                0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  }
+  
+  .cdk-drag-placeholder {
+    opacity: 0;
+  }
+  
+  .cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+  
+  .example-box:last-child {
+    border: none;
+  }
+  
+  .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  .calk_table__card_second_type {
+    background-color: #6597D2;
+    color: #ffffff;
+  }
+
+  .calk_table__card_first_type {
+    background-color: #28568a;
+    color: #ffffff;
+  } 

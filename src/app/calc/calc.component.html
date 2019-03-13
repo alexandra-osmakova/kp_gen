@@ -1,0 +1,42 @@
+<section class="content_block" cdkDropListGroup>
+  <h2>Сайт с нуля</h2>
+  <h3 class="common_text">Калькуляция стоимости</h3>
+  <div class="calk_table">
+    <div class="calk_table__column">
+      <span class="common_text">Этап подготовки</span>
+      <div cdkDropList [cdkDropListData]="preparationColumn" class="example-list" (cdkDropListDropped)="drop($event)">
+        <div class="calk_table__card" *ngFor="let item of preparationColumn" cdkDrag>{{item}}</div>
+      </div>
+    </div>
+    <div class="calk_table__column">
+      <span class="common_text">1-я версия</span>
+      <div cdkDropList [cdkDropListData]='firstStage' class="example-list" (cdkDropListDropped)="drop($event)">
+        <div class="calk_table__card" *ngFor="let item of firstStage" cdkDrag>{{item}}</div>
+      </div>
+    </div>
+    <div class="calk_table__column">
+      <span class="common_text">2-я версия</span>
+      <div cdkDropList [cdkDropListData]="secondStage" class="example-list" (cdkDropListDropped)="drop($event)">
+        <div class="calk_table__card" *ngFor="let item of secondStage" cdkDrag>{{item}}</div>
+      </div>
+    </div>
+    <div class="calk_table__column">
+      <span class="common_text">3-я версия</span>
+      <div cdkDropList [cdkDropListData]="thirdStage" class="example-list" (cdkDropListDropped)="drop($event)">
+        <div class="calk_table__card" *ngFor="let item of thirdStage" cdkDrag>{{item}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="allOptions">
+    <div cdkDropList [cdkDropListData]="allOptionsBlock" class="example-list" (cdkDropListDropped)="drop($event)">
+      <div class="calk_table__card calk_table__card_first_type" *ngFor="let item of allOptionsBlock" cdkDrag>{{item}}</div>
+    </div>
+    <div cdkDropList [cdkDropListData]="allOptionsModules" class="example-list" (cdkDropListDropped)="drop($event)">
+      <div class="calk_table__card calk_table__card_second_type" *ngFor="let item of allOptionsModules" cdkDrag>{{item}}</div>
+    </div>
+    <div cdkDropList [cdkDropListData]="allOptionsAditional" class="example-list" (cdkDropListDropped)="drop($event)">
+      <div class="calk_table__card" *ngFor="let item of allOptionsAditional" cdkDrag>{{item}}</div>
+    </div>
+  </div>
+  <button class="button_next">Сформировать КП</button>
+</section>
