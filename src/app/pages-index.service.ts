@@ -3,58 +3,23 @@ import { EventEmitter } from '@angular/core';
 export class PagesIndexService {
   public clickCnt: number = 0;
   onClick: EventEmitter<number> = new EventEmitter();
-  textInputPlaceholder = [];
-  checkBoxInutPlaceholder = [];
-  radioInputPlaceholder = [];
-  showInputText = false;
-  showInputRadio = false;
-  showInputCheckbox = false;
+
+
+
 
   public doClick() {
     this.clickCnt++;
     this.onClick.emit(this.clickCnt);
-    this.dataCheck()
-    console.log(this.clickCnt)
   }
 
   public backClick() {
     this.clickCnt--;
     this.onClick.emit(this.clickCnt);
-    this.dataCheck()
-    console.log(this.clickCnt)
   }
 
   public clearClick() {
     this.clickCnt = 0;
     this.onClick.emit(this.clickCnt);
-    this.dataCheck()
-    console.log(this.clickCnt)
-  }
-
-  dataCheck() {
-    this.textInputPlaceholder = [];
-    this.checkBoxInutPlaceholder = [];
-    this.radioInputPlaceholder = [];
-    this.showInputText = false;
-    this.showInputRadio = false;
-    this.showInputCheckbox = false;
-    for (let i = 0; i < this.questionPages[this.clickCnt].input.length; i++) {
-      if (this.questionPages[this.clickCnt].input[i].inputType == 'text') {
-        this.textInputPlaceholder.push(this.questionPages[this.clickCnt].input[i].placeholder)
-        this.showInputText = true;
-      }
-      else if (this.questionPages[this.clickCnt].input[i].inputType == 'radio') {
-        this.radioInputPlaceholder.push(this.questionPages[this.clickCnt].input[i].placeholder);
-        this.showInputRadio = true;
-      }
-      else if (this.questionPages[this.clickCnt].input[i].inputType == 'checkbox') {
-        this.checkBoxInutPlaceholder.push(this.questionPages[this.clickCnt].input[i].placeholder);
-        this.showInputCheckbox = true;
-      }
-    }
-    console.log(this.textInputPlaceholder,
-      this.checkBoxInutPlaceholder,
-      this.radioInputPlaceholder)
   }
 
   public questionPages = [
@@ -183,6 +148,5 @@ export class PagesIndexService {
 
 
   constructor() {
-    this.dataCheck();
   }
 }

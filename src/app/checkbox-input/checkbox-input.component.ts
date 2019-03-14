@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { PagesIndexService } from '../pages-index.service';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-checkbox-input',
@@ -7,14 +6,18 @@ import { PagesIndexService } from '../pages-index.service';
   styleUrls: ['./checkbox-input.component.css']
 })
 export class CheckboxInputComponent implements OnInit {
-  inputChecker = this.share.clickCnt;
-  inputInfo: any = this.share.questionPages[this.inputChecker];
-  inputPlaceholder = this.share.checkBoxInutPlaceholder;
+  @Input() inputProps: any;
+  show: boolean = false;
+  placeholder: string;
 
-  constructor(private share: PagesIndexService) { 
+  constructor() { 
     }
 
   ngOnInit() {
+    const { inputType, placeholder } = this.inputProps;
+
+    this.show = inputType === 'checkbox'
+    this.placeholder = placeholder;
   }
 
 

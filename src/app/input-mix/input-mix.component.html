@@ -2,18 +2,21 @@
   <h2>{{currentInputInfo.name}}</h2>
   <h3 class="common_text">Вопрос {{currentInputInfo.counter}}/{{inputInfo.length}}</h3>
   <div class="inputs_content">
-    <div *ngFor="let item of currentInputInfo.title">
+    <div class="title_style" *ngFor="let item of currentInputInfo.title">
       <span class="common_text">{{item}}</span>
     </div>
     <div class="text_inputs_wrap">
-      <app-text-input *ngIf='showInputText'></app-text-input>
-      <app-radio-input *ngIf='showInputRadio'></app-radio-input>
-      <app-checkbox-input *ngIf='showInputCheckbox'></app-checkbox-input>
+      <div *ngFor="let input of currentInputInfo.input">
+          <app-text-input [inputProps]="input"></app-text-input>
+          <app-radio-input [inputProps]="input"></app-radio-input>
+          <app-checkbox-input [inputProps]="input"></app-checkbox-input>
+      </div>
     </div>
 
     <div class="section_controls">
-      <button *ngIf="nextControl" class="button_next" (click)="changePage()">следующий
-        вопрос</button>
+      <button *ngIf="nextControl" class="button_next" (click)="changePage()">
+        следующий вопрос
+      </button>
       <button *ngIf="!nextControl" class="button_next" (click)="calcOpen()">перейти к калькулятору</button>
       <button class="button_prev" (click)="changePageBack()">назад</button>
     </div>

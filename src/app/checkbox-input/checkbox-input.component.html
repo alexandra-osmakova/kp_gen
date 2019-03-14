@@ -1,9 +1,11 @@
-<div class="inputs_wrap" *ngFor="let item of inputPlaceholder">
+<div class="inputs_wrap" *ngIf='show' >
   <label class="checkbox_group">
     <input type="checkbox" name="check">
     <span class="label-visible">
       <span class="fake-checkbox"></span>
-      {{item}}
+      {{placeholder}}
     </span>
   </label>
 </div>
+
+  

@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { PagesIndexService } from '../pages-index.service';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-text-input',
@@ -7,15 +6,14 @@ import { PagesIndexService } from '../pages-index.service';
   styleUrls: ['./text-input.component.css']
 })
 export class TextInputComponent implements OnInit {
-  inputChecker = this.share.clickCnt;
-  inputInfo: any = this.share.questionPages[this.inputChecker];
-  inputPlaceholder = this.share.textInputPlaceholder;
+  @Input() inputProps: any;
+  show: boolean = false;
+  placeholder: string;
 
-  constructor(private share: PagesIndexService) { 
-    }
+  ngOnInit () {
+    const { inputType, placeholder } = this.inputProps;
 
-  ngOnInit() {
+    this.show = inputType === 'text'
+    this.placeholder = placeholder;
   }
-
-
 }

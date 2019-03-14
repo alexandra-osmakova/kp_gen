@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { PagesIndexService } from '../pages-index.service';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-radio-input',
@@ -7,14 +6,18 @@ import { PagesIndexService } from '../pages-index.service';
   styleUrls: ['./radio-input.component.css']
 })
 export class RadioInputComponent implements OnInit {
-  inputChecker = this.share.clickCnt;
-  inputInfo: any = this.share.questionPages[this.inputChecker];
-  inputPlaceholder = this.share.radioInputPlaceholder;
+  @Input() inputProps: any;
+  show: boolean = false;
+  placeholder: string;
 
-  constructor(private share: PagesIndexService) {
+  constructor() {
   }
 
   ngOnInit() {
+    const { inputType, placeholder } = this.inputProps;
+
+    this.show = inputType === 'radio'
+    this.placeholder = placeholder;
   }
 
 }

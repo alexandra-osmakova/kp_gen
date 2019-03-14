@@ -1,9 +1,9 @@
-<div class="inputs_wrap" *ngFor="let item of inputPlaceholder">
+<div class="inputs_wrap" *ngIf='show'>
   <label class="radio-button">
     <input type="radio" name="radio" checked="checked">
     <span class="label-visible">
       <span class="fake-radiobutton"></span>
-      {{item}}
+      {{placeholder}}
     </span>
   </label>
 </div>

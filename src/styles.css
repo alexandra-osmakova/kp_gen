@@ -39,6 +39,10 @@ h2 {
   color: #333333;
 }
 
+.title_style {
+  margin-top: 1.625rem;
+}
+
 button {
   font-size: 1rem;
   color: #333333;
@@ -72,7 +76,7 @@ button:hover {
 .inputs_wrap {
   display: flex;
   flex-wrap: wrap;
-  padding-top: 1rem
+  padding-top: 1.625rem
 }
 
 input[type=text] {
@@ -95,7 +99,6 @@ input[type=text]::placeholder {
 .radio-button,
 .checkbox_group {
   position: relative;
-  margin: 1rem 0;
   display: block;
 }
 
