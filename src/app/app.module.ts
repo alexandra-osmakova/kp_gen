@@ -12,7 +12,8 @@ import { InputMixComponent } from './input-mix/input-mix.component';
 const appRoutes: Routes = [
   {
     path : '',
-    component : MainPageComponent
+    component : MainPageComponent,
+    pathMatch: 'full'
   },
   {
     path: 'inputs',

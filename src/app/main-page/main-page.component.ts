@@ -15,18 +15,18 @@ export class MainPageComponent implements OnInit {
   ngOnInit() {
   }
 
-changePage(index) {
-  switch (index) {
-    case 1:
-      this.router.navigate(['inputs']);
-      break;
-    case 2:
-      break;
-    case 3:
-      break;
-    default:
-      alert( 'Some mistake' );
+  changePage(index) {
+    switch (index) {
+      case 1:
+        this.router.navigate(['inputs']);
+        break;
+      case 2:
+        break;
+      case 3:
+        break;
+      default:
+        alert( 'Some mistake' );
+    }
   }
-}
 
 }

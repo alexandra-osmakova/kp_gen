@@ -9,7 +9,7 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
 export class CalcComponent implements OnInit {
 
   constructor() {
-    if(this.firstStage.length != 0) {
+    if (this.firstStage.length != 0) {
       this.secondStage = ['То же, что и в первой версии'];
       this.thirdStage = ['То же, что и во второй версии'];
     }
@@ -32,7 +32,7 @@ export class CalcComponent implements OnInit {
   ]
 
   allOptionsModules: any = [
-    'мультилендинг', 'виджет обратного звонка','онлайн-чат', 'форма обратной связи', 'система управления сайтом'
+    'мультилендинг', 'виджет обратного звонка', 'онлайн-чат', 'форма обратной связи', 'система управления сайтом'
   ]
 
   allOptionsAditional: any = [
@@ -49,9 +49,18 @@ export class CalcComponent implements OnInit {
         event.previousIndex,
         event.currentIndex);
     }
-    if(this.firstStage.length != 0) {
-      this.secondStage.push('То же, что и в первой версии')
-      this.thirdStage = ['То же, что и во второй версии'];
+    if (this.firstStage.length != 0) {
+      for (let i = 0; i < this.firstStage.length; i++) {
+        if (this.secondStage.indexOf(this.firstStage[i]) == -1) {
+          this.secondStage.push(this.firstStage[i])
+        }
+      }
+
+      for (let i = 0; i < this.secondStage.length; i++) {
+        if (this.thirdStage.indexOf(this.secondStage[i]) == -1) {
+          this.thirdStage.push(this.secondStage[i])
+        }
+      }
     }
   }
 }
