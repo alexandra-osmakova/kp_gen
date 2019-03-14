@@ -69,10 +69,10 @@ button:hover {
   background-color: #DCDCDC;
 }
 
-.text_inputs_wrap {
+.inputs_wrap {
   display: flex;
   flex-wrap: wrap;
-  padding-top: 1.625rem
+  padding-top: 1rem
 }
 
 input[type=text] {
@@ -171,5 +171,11 @@ input[type="checkbox"]:checked+span .fake-checkbox:after {
 .delete {
     background-color: #D26565;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.section_controls {
+  max-width: 50%;
+  display: flex;
+  align-items: center;
+  padding-top: 2rem;
+}
+

@@ -1,34 +1,21 @@
 <div class="content_block">
-  <h2>Сайт с нуля</h2>
-  <h3 class="common_text">Вопрос 4/17</h3>
+  <h2>{{currentInputInfo.name}}</h2>
+  <h3 class="common_text">Вопрос {{currentInputInfo.counter}}/{{inputInfo.length}}</h3>
+  <div class="inputs_content">
+    <div *ngFor="let item of currentInputInfo.title">
+      <span class="common_text">{{item}}</span>
+    </div>
+    <div class="text_inputs_wrap">
+      <app-text-input *ngIf='showInputText'></app-text-input>
+      <app-radio-input *ngIf='showInputRadio'></app-radio-input>
+      <app-checkbox-input *ngIf='showInputCheckbox'></app-checkbox-input>
+    </div>
 
-  <div class="text_inputs_wrap">
-    <input type="text" name="" id="" placeholder="Сфера деятельности">
+    <div class="section_controls">
+      <button *ngIf="nextControl" class="button_next" (click)="changePage()">следующий
+        вопрос</button>
+      <button *ngIf="!nextControl" class="button_next" (click)="calcOpen()">перейти к калькулятору</button>
+      <button class="button_prev" (click)="changePageBack()">назад</button>
+    </div>
+
   </div>
-  <div class="text_inputs_wrap">
-    <input type="text" name="" id="" placeholder="Сфера деятельности">
-  </div>
-
-  <label class="radio-button">
-    <input type="radio" name="radio" checked="checked">
-    <span class="label-visible">
-      <span class="fake-radiobutton"></span>
-      Radio
-    </span>
-  </label>
-
-  <label class="checkbox_group">
-    <input type="checkbox" name="check">
-    <span class="label-visible">
-      <span class="fake-checkbox"></span>
-      Checkbox
-    </span>
-  </label>
-
-  <button class="button_next">следующий вопрос</button>
-  <button class="button_prev">назад</button>
-
-  <button class="plus_button">+</button>
-  <button class="plus_button delete">-</button>
-
-</div>

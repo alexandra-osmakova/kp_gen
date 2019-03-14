@@ -8,12 +8,20 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { CalcComponent } from './calc/calc.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InputMixComponent } from './input-mix/input-mix.component';
+import { PagesIndexService } from './pages-index.service';
+import { TextInputComponent } from './text-input/text-input.component';
+import { RadioInputComponent } from './radio-input/radio-input.component';
+import { CheckboxInputComponent } from './checkbox-input/checkbox-input.component';
 
 const appRoutes: Routes = [
   {
     path : '',
     component : MainPageComponent,
     pathMatch: 'full'
+  },
+  {
+    path : 'main',
+    component : MainPageComponent,
   },
   {
     path: 'inputs',
@@ -30,7 +38,10 @@ const appRoutes: Routes = [
     AppComponent,
     MainPageComponent,
     CalcComponent,
-    InputMixComponent
+    InputMixComponent,
+    TextInputComponent,
+    RadioInputComponent,
+    CheckboxInputComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +50,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
   ],
   exports: [RouterModule],
-  providers: [],
+  providers: [PagesIndexService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
